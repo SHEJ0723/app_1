@@ -1,0 +1,1 @@
+import{_ as o,o as _,c as s,d as t}from"./index-06309a7e.js";const a={},c={class:"auto-pay-view"};function n(r,e){return _(),s("div",c,e[0]||(e[0]=[t("h2",null,"自动扣费",-1),t("p",null,"自动扣费功能开发中。",-1)]))}const l=o(a,[["render",n],["__scopeId","data-v-ff01c460"]]);export{l as default};

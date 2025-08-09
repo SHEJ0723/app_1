@@ -1,0 +1,390 @@
+@import './button-styles.css';
+@import './admin-style.css';
+
+:root {
+  --primary: #2563eb;
+  --secondary: #1e40af;
+  --accent: #7c3aed;
+  --background: #f0f9ff;
+  --card: #ffffff;
+  --text: #1e293b;
+  --orange: #f59e42;
+  --green: #22c55e;
+  --green-light: #bbf7d0;
+}
+
+/* 全局样式 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* z-index层级管理 */
+.el-message {
+  z-index: 3000 !important;
+}
+
+.el-notification {
+  z-index: 3001 !important;
+}
+
+.el-message-box {
+  z-index: 3002 !important;
+}
+
+.el-dialog {
+  z-index: 2000 !important;
+}
+
+.el-drawer {
+  z-index: 2001 !important;
+}
+
+.el-popover {
+  z-index: 2002 !important;
+}
+
+.el-tooltip {
+  z-index: 2003 !important;
+}
+
+.el-dropdown {
+  z-index: 2004 !important;
+}
+
+.el-select-dropdown {
+  z-index: 2005 !important;
+}
+
+.el-date-picker {
+  z-index: 2006 !important;
+}
+
+.el-time-picker {
+  z-index: 2007 !important;
+}
+
+.el-cascader {
+  z-index: 2008 !important;
+}
+
+.el-autocomplete {
+  z-index: 2009 !important;
+}
+
+/* 反馈提示组件层级 */
+.feedback-toast-container {
+  z-index: 1000 !important;
+}
+
+/* 确保账户相关组件不被遮挡 */
+.user-menu,
+.account-menu,
+.logout-button {
+  z-index: 1500 !important;
+  position: relative;
+}
+
+/* 预约对话框特殊层级 */
+.reserve-dialog {
+  z-index: 2500 !important;
+}
+
+/* 时间选择器面板层级 */
+.el-picker-panel {
+  z-index: 2010 !important;
+}
+
+/* 确保文字清晰可见 - 完全不透明 */
+.el-picker-panel__shortcut {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  background: #ffffff !important;
+  padding: 12px 18px !important;
+  border-radius: 6px !important;
+  margin: 2px 4px !important;
+  border: 2px solid #000000 !important;
+  transition: all 0.2s !important;
+  text-shadow: none !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+}
+
+.el-picker-panel__shortcut:hover {
+  background: #409eff !important;
+  color: #ffffff !important;
+  border-color: #409eff !important;
+  box-shadow: 0 4px 12px rgba(64, 158, 255, 0.4) !important;
+  transform: translateY(-2px) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 按钮文字对比度 - 确保完全不透明 */
+.el-button {
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  color: #000000 !important;
+}
+
+.el-button--primary {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+}
+
+.el-button--default {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border: 2px solid #000000 !important;
+  background: #ffffff !important;
+  font-size: 14px !important;
+}
+
+.el-button--default:hover {
+  color: #ffffff !important;
+  border-color: #409eff !important;
+  background: #409eff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 所有按钮文字强制不透明 */
+button, .el-button, .btn {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+button:hover, .el-button:hover, .btn:hover {
+  opacity: 1 !important;
+}
+
+/* 输入框文字对比度 - 确保完全不透明 */
+.el-input__inner {
+  color: #000000 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+}
+
+.el-input__inner::placeholder {
+  color: #666666 !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+/* 表单标签文字对比度 - 确保完全不透明 */
+.el-form-item__label {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* 对话框标题文字对比度 - 确保完全不透明 */
+.el-dialog__title {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* 确保所有文字都有足够的对比度 - 强制不透明 */
+* {
+  color: inherit;
+}
+
+/* 深色文字 */
+.text-dark {
+  color: #000000 !important;
+  font-weight: 700;
+  text-shadow: none;
+  opacity: 1 !important;
+}
+
+/* 中等深色文字 */
+.text-medium {
+  color: #000000 !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
+/* 浅色文字 */
+.text-light {
+  color: #333333 !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
+/* 白色文字 */
+.text-white {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  opacity: 1 !important;
+}
+
+/* 按钮文字增强 - 强制不透明 */
+button, .el-button {
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  opacity: 1 !important;
+}
+
+/* 输入框文字增强 - 强制不透明 */
+input, .el-input__inner {
+  color: #000000 !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+/* 标签文字增强 - 强制不透明 */
+label, .el-form-item__label {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  text-shadow: none;
+  opacity: 1 !important;
+}
+
+/* 全局强制不透明 */
+span, div, p, h1, h2, h3, h4, h5, h6, a, li, td, th {
+  opacity: 1 !important;
+}
+
+/* 特殊文字样式 */
+.el-text, .el-link, .el-tag {
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
+
+button, .el-button {
+  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  border-radius: 12px;
+  padding: 12px 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+button:hover, .el-button:hover {
+  background: linear-gradient(90deg, #1e40af 0%, #a78bfa 100%);
+}
+
+.card, .el-card {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(80,80,160,0.15);
+  padding: 36px 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+input, .el-input__wrapper {
+  border: 1.5px solid #e0e7ef;
+  border-radius: 8px;
+  background: #f8fafc;
+  transition: border-color 0.2s;
+}
+input:focus, .el-input__wrapper:focus-within {
+  border-color: #2563eb;
+}
+
+/* 强调色按钮 */
+.btn-orange {
+  background: var(--orange) !important;
+  color: #fff !important;
+}
+
+/* 主内容区渐变背景 */
+.main-gradient-bg {
+  background: linear-gradient(120deg, #f0f9ff 60%, #e0e7ff 100%);
+  min-height: 100vh;
+  padding: 32px 0;
+}
+
+/* 侧边栏、顶部栏、功能按钮、布局图等样式见各页面 */
+
+/* 绿色按钮样式 */
+.btn-green {
+  background: linear-gradient(90deg, #22c55e 0%, #4ade80 100%) !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 2px 8px #22c55e22;
+  transition: background 0.2s;
+}
+.btn-green:hover {
+  background: linear-gradient(90deg, #16a34a 0%, #22d3ee 100%) !important;
+}
+
+/* 绿色高亮交互 */
+.sidebar .el-menu-item.is-active,
+.sidebar .el-menu-item:hover {
+  background: var(--green-light) !important;
+  color: var(--green) !important;
+  border-radius: 12px;
+}
+
+/* 卡片绿色状态条（如可用/成功） */
+.card-green-bar {
+  border-left: 4px solid var(--green);
+}
+
+/* 绿色标签/状态点 */
+.status-green {
+  color: var(--green);
+  background: var(--green-light);
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 0.95em;
+  margin-left: 6px;
+}
+
+.pretty-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  min-height: 38px;
+  padding: 0 28px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: #fff;
+  border: 2px solid #2563eb;
+  border-radius: 24px;
+  box-shadow: 0 2px 12px #2563eb22;
+  cursor: pointer;
+  transition: all 0.18s;
+  text-align: center;
+  margin: 8px 0;
+  letter-spacing: 1px;
+  user-select: none;
+}
+.pretty-btn:hover, .pretty-btn:focus {
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #fff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 18px #2563eb33;
+}
+.pretty-btn:active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+} 

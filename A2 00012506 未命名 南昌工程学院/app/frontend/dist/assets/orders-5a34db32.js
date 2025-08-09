@@ -1,0 +1,1 @@
+import{a as e}from"./index-d5848531.js";const t=async(r={})=>e.get("/api/orders",{params:r}),n=async r=>e.post("/api/orders",r),c=async r=>e.delete(`/api/orders/${r}`),o=async r=>e.post(`/api/orders/${r}/cancel`),p=async(r,s)=>e.post(`/api/orders/${r}/pay`,{pay_method:s});export{o as a,n as c,c as d,t as g,p};

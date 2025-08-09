@@ -1,0 +1,1 @@
+import{_ as n,o as s,c,d as _}from"./index-06309a7e.js";const t={},o={class:"find-car-view"};function a(r,e){return s(),c("div",o,e[0]||(e[0]=[_("h2",null,"查找车辆",-1),_("p",null,"查找车辆功能开发中。",-1)]))}const l=n(t,[["render",a],["__scopeId","data-v-c4546396"]]);export{l as default};
